@@ -1,0 +1,30 @@
+{
+  "name": "episode-2",
+  "version": "1.0.0",
+  "description": "This is Episode 2 of Namaste React",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Manish270698/Namaste_React"
+  },
+  "keywords": [],
+  "author": "Manish Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manish270698/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/Manish270698/Namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
