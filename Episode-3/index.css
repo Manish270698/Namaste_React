@@ -1,0 +1,61 @@
+/* #heading {
+  color: red;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: blueviolet;
+}
+
+h3 {
+  color: rgb(3, 154, 104);
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  background-color: #42e47a;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.logo {
+  flex: 1;
+  color: #fff;
+  font-size: 24px;
+}
+
+.search-bar {
+  flex: 2;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.user-icon {
+  flex: 1;
+  text-align: right;
+}
+
+ img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
