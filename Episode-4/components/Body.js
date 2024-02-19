@@ -10,23 +10,26 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => fetchData, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-
-    console.log(json);
-    console.log("if this is printed 1st then the json is empty");
-    setResList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredResList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+      console.log(json);
+      console.log("if this is printed 1st then the json is empty");
+      setResList(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredResList(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    };
+    fetchData();
+  }, []);
 
   // Conditional Rendering
   return restaurantList.length === 0 ? (
@@ -81,7 +84,7 @@ const Body = () => {
         <button
           className="top-btn"
           onClick={() => {
-            const filteredList = restaurantList.filter(
+            const filteredList = filteredResList.filter(
               (res) => res.info.avgRating > 4
             );
             setFilteredResList(filteredList);
