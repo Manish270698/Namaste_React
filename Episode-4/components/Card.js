@@ -16,7 +16,7 @@ const Card = (props) => {
         src={RES_IMG + resData.info.cloudinaryImageId}
       ></img>
       <div className="res-info">
-        <h4>{name.length > 30 ? name.slice(0, 27) + "...": name}</h4>
+        <h4>{name.length > 30 ? name.slice(0, 22) + "..." : name}</h4>
         <h5>{cuisines}</h5>
         <h5>{costForTwo}</h5>
         <h5>{sla.deliveryTime} mins</h5>

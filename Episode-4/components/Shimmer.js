@@ -2,7 +2,7 @@ import searchIcon from "../images/searchIcon.png";
 
 const Shimmer = () => {
   return (
-    <div>
+    <div className="body-cont">
       <div>
         <div className="searchBar">
           {/* Whenever the state varibale changes, React re-renders the whole component. But only the chnaged part is updated */}

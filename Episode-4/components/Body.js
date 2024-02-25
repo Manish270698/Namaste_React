@@ -1,5 +1,6 @@
 // import resList from "../utils/mockData";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import searchIcon from "../images/searchIcon.png";
 import Shimmer from "./Shimmer";
@@ -18,6 +19,7 @@ const Body = () => {
       const json = await data.json();
 
       console.log(json);
+      console.log("running");
       console.log("if this is printed 1st then the json is empty");
       setResList(
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -96,7 +98,12 @@ const Body = () => {
       <div className="res-parent">
         <div className="res-container">
           {filteredResList.map((restaurant) => (
-            <Card key={restaurant.info.id} resData={restaurant} />
+            <Link
+              key={restaurant?.info.id}
+              to={"/restaurants/" + restaurant?.info?.id}
+            >
+              <Card key={restaurant?.info?.id} resData={restaurant} />
+            </Link>
           ))}
         </div>
       </div>
