@@ -1,4 +1,5 @@
 import { RES_IMG } from "../utils/constants";
+import star from "../images/star.png"
 
 const Card = (props) => {
   const { resData } = props;
@@ -17,10 +18,10 @@ const Card = (props) => {
       ></img>
       <div className="res-info">
         <h4>{name.length > 30 ? name.slice(0, 22) + "..." : name}</h4>
-        <h5>{cuisines}</h5>
-        <h5>{costForTwo}</h5>
-        <h5>{sla.deliveryTime} mins</h5>
-        <h5>{avgRating} stars</h5>
+        <p>{cuisines}</p>
+        <p>{costForTwo}</p>
+        <p>{sla.deliveryTime} mins</p>
+        <p className="rating"><img src={star} alt='rating' />{avgRating}</p>
       </div>
     </div>
   );

@@ -8,8 +8,12 @@ import Error from "/components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { useState } from "react";
 
+// const modeSwitch = document.getElementById("modeSwitch");
+
+// modeSwitch.addEventListener("change", function() {
+//   document.body.classList.toggle("dark-mode", this.checked);
+// });
 
 const AppLayout = () => {
   return (

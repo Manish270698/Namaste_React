@@ -15,6 +15,7 @@ const RestaurantMenu = () => {
   }, []);
 
   const fetchMenu = async () => {
+    console.log(MENU_URL + resId);
     const data = await fetch(MENU_URL + resId);
     const json = await data.json();
 
@@ -29,13 +30,13 @@ const RestaurantMenu = () => {
   }
 
   const { name, costForTwoMessage, cuisines, areaName, avgRatingString } =
-    resInfo?.cards[2]?.card?.card?.info;
+    resInfo?.cards[0]?.card?.card?.info;
 
-  const itemCards = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
+  const itemCards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR
     ?.cards[2]?.card?.card?.itemCards
-    ? resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    ? resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
         ?.card?.itemCards
-    : resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+    : resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
         ?.card?.itemCards;
   console.log("itemCards:", itemCards);
 
@@ -51,7 +52,7 @@ const RestaurantMenu = () => {
       <ul>
         {itemCards.map((item) => (
           <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name} - Rs{" "}
+            {item?.card?.info?.name} - ₹{" "}
             {item?.card?.info?.price
               ? item?.card?.info?.price / 100
               : item?.card?.info?.defaultPrice / 100}
