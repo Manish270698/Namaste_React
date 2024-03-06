@@ -22,7 +22,17 @@ class About extends Component{
         <h1>About Us</h1>
         <h2>This is Namaste React by Manish</h2>
         <UserClass
-          name="Manish Kumar"
+          name="Child1"
+          location="Bangalore"
+          contact="@bruce_wayne027"
+        />
+        <UserClass
+          name="Child2"
+          location="Bangalore"
+          contact="@bruce_wayne027"
+        />
+        <UserClass
+          name="Child3"
           location="Bangalore"
           contact="@bruce_wayne027"
         />
