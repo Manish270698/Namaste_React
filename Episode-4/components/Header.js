@@ -1,25 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LOGO from "../images/logo.png";
 import moon from "../images/moon.png";
 import light from "../images/light.png";
-import cereal from "../images/cereal.png"
+import cereal from "../images/cereal.png";
+import OfflineAlert from "./OfflineAlert";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
-  const [darkMode, setDarkMode] = useState(true);
-  const [imgSrc, setImgSrc] = useState(true);
+  const [imgSrc, setImgSrc] = useState(moon);
+
+  useEffect(() => handleToggle(), [imgSrc]);
 
   const handleToggle = () => {
-    setDarkMode(!darkMode);
-    setImgSrc(!imgSrc);
-    document
-      .querySelectorAll("*")
-      .forEach((e) => e.classList.toggle("dark-mode"));
+    imgSrc === moon
+      ? document
+          .querySelectorAll("*")
+          .forEach((e) => e.classList.remove("dark-mode"))
+      : document
+          .querySelectorAll("*")
+          .forEach((e) => e.classList.add("dark-mode"));
   };
 
   return (
     <div className="header">
+      <OfflineAlert />
       <div className="logo">
         <img className="logo-img" alt="logo image" src={cereal} />
       </div>
@@ -42,9 +46,12 @@ const Header = () => {
             <div className="mode-container">
               <img
                 id="theme"
-                src={imgSrc ? moon : light}
+                src={imgSrc}
                 alt="theme"
-                onClick={handleToggle}
+                onClick={() => {
+                  imgSrc == moon ? setImgSrc(light) : setImgSrc(moon);
+                  // return handleToggle();
+                }}
               />
             </div>
           </li>
@@ -66,10 +73,4 @@ const Header = () => {
   );
 };
 
-// const modeSwitch = document.getElementById("modeSwitch");
-// console.log("modeSwitch: ",modeSwitch);
-
-// modeSwitch.addEventListener("change", function() {
-//   document.body.classList.toggle("dark-mode", this.checked);
-// });
 export default Header;

@@ -1,5 +1,5 @@
 import { RES_IMG } from "../utils/constants";
-import star from "../images/star.png"
+import star from "../images/star.png";
 
 const Card = (props) => {
   const { resData } = props;
@@ -21,7 +21,12 @@ const Card = (props) => {
         <p>{cuisines}</p>
         <p>{costForTwo}</p>
         <p>{sla.deliveryTime} mins</p>
-        <p className="rating"><img src={star} alt='rating' />{avgRating}</p>
+        {avgRating ? (
+          <p className="rating">
+            <img src={star} alt="rating" />
+            {avgRating}
+          </p>
+        ) : null}
       </div>
     </div>
   );

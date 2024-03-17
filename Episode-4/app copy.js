@@ -8,10 +8,14 @@ import Error from "/components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import useOnlineCheck from "./utils/useOnlineCheck";
+
+// const modeSwitch = document.getElementById("modeSwitch");
+
+// modeSwitch.addEventListener("change", function() {
+//   document.body.classList.toggle("dark-mode", this.checked);
+// });
 
 const AppLayout = () => {
-  // const { onlineCheck } = useOnlineCheck();
   return (
     <div className="app">
       <Header />
@@ -52,5 +56,7 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(<AppLayout />);
 
 root.render(<RouterProvider router={appRouter} />);

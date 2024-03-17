@@ -20,6 +20,29 @@
   height: 100%;
 }
 
+.offline-alert {
+  position: fixed;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  padding: 0;
+  font-size: 0.9rem;
+  z-index: 999;
+  background-color: red;
+}
+.show {
+  transform: translateY(0.9rem);
+  transition: transform 2s;
+}
+
+.hide {
+  background-color: rgb(33, 177, 45);
+  transform: translateY(-0.9rem);
+  transition: transform 2s;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +57,7 @@
 }
 
 .logo-img {
-  height: 4rem;
+  height: 3.5rem;
   margin-left: 1rem;
 }
 
@@ -58,7 +81,6 @@
   font-weight: bold;
   padding: 6px 6px;
   border-radius: 8px 8px;
-  box-shadow: 2px 2px 15px 2px #cccbcb;
   background-color: rgb(248, 159, 90);
 }
 
